@@ -1,0 +1,49 @@
+[package]
+name = "dapp"
+version = "0.0.1"
+description = "A library to facilitate development of considerate applications."
+repository = "https://github.com/shivanandvp/dapp.git"
+homepage = "https://github.com/shivanandvp/dapp.git"
+authors = ["shivanandvp <shivanandvp.oss@gmail.com>"]
+keywords = ["cli", "xdg", "log", "logging", "configure", "configuration"]
+exclude = ["packaging/*", ".github/*", "*.code-workspace"]
+categories = ["command-line-interface", "command-line-utilities"]
+documentation = "https://docs.rs/dapp"
+readme = "README.md"
+edition = "2021"
+
+[features]
+default = ["config", "log", "serde", "yaml", "json", "toml", "ron"]
+config = ["path"]
+log = ["path", "dep:tracing", "dep:tracing-appender", "dep:tracing-subscriber"]
+path = ["dep:permissions"]
+serde = ["dep:serde", "dep:ambassador"]
+yaml = ["serde", "dep:serde_yaml"]
+json = ["serde", "dep:serde_json"]
+toml = ["serde", "dep:toml"]
+ron = ["serde", "dep:ron"]
+json5 = ["serde", "dep:json5"]
+hjson = ["serde", "dep:serde-hjson"]
+
+[dependencies]
+
+ambassador = { version = "0.3", optional = true }
+snafu = { version = "0.7" }
+
+# Logging
+tracing = { version = "0.1", optional = true }
+tracing-appender = { version = "0.2", optional = true }
+tracing-subscriber = { version = "0.3", optional = true }
+
+# Filesystem
+xdg = { version = "2.5", optional = true }
+permissions = { version = "0.4", optional = true }
+
+# Data
+serde = { version = "1.0", features = ["derive"],  optional = true }
+serde_yaml = { version = "0.9", optional = true }
+serde_json = { version = "1.0", optional = true }
+toml = { version = "0.7", optional = true }
+ron = { version = "0.8", optional = true }
+json5 = { version = "0.4", optional = true }
+serde-hjson = { version = "0.9", optional = true }
