@@ -2,9 +2,9 @@
 name = "dapp"
 version = "0.0.1"
 description = "A library to facilitate development of considerate applications."
-repository = "https://github.com/shivanandvp/dapp.git"
-homepage = "https://github.com/shivanandvp/dapp.git"
-authors = ["shivanandvp <shivanandvp.oss@gmail.com>"]
+repository = "https://github.com/shiva-patt-oss/dapp.git"
+homepage = "https://github.com/shiva-patt-oss/dapp.git"
+authors = ["shiva.patt <shiva.patt.oss@gmail.com>"]
 keywords = ["cli", "xdg", "log", "logging", "configure", "configuration"]
 exclude = ["packaging/*", ".github/*", "*.code-workspace"]
 categories = ["command-line-interface", "command-line-utilities"]
